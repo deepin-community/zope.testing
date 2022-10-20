@@ -1,0 +1,317 @@
+zope.testing (4.9-1) unstable; urgency=medium
+
+  * QA upload.
+  * New upstream version.
+
+ -- Matthias Klose <doko@debian.org>  Wed, 20 Jan 2021 17:07:29 +0100
+
+zope.testing (4.7-1) unstable; urgency=medium
+
+  * QA upload.
+  * New upstream version.
+  * Bump standards and debhelper versions.
+
+ -- Matthias Klose <doko@debian.org>  Sun, 22 Nov 2020 16:34:10 +0100
+
+zope.testing (4.6.2-3) unstable; urgency=medium
+
+  * QA upload.
+  * Drop Python 2 tests (Closes: #940316)
+  * Increase verbosity of Python 3 tests
+
+ -- Paul Gevers <elbrus@debian.org>  Fri, 20 Sep 2019 22:21:00 +0200
+
+zope.testing (4.6.2-2) unstable; urgency=medium
+
+  * QA upload.
+  * Orphan the package. Closes: #869471.
+  * Stop building the Python2 package: Closes: #938918.
+  * Update build dependencies. Closes: #928150.
+  * Fix lintian warnings.
+
+ -- Matthias Klose <doko@debian.org>  Thu, 05 Sep 2019 08:52:58 +0200
+
+zope.testing (4.6.2-1) unstable; urgency=medium
+
+  * New upstream release.
+  * Add support for Python 3.6.  (Closes: #867777)
+  * d/control:
+    - Bump to Standards-Version 4.0.0 with no other changes needed.
+    - Bump Python versions to >= 2.7 and >= 3.5
+    - Remove redundant XS-Testsuite header.
+
+ -- Barry Warsaw <barry@debian.org>  Mon, 10 Jul 2017 21:47:10 -0400
+
+zope.testing (4.6.0-1) unstable; urgency=medium
+
+  * New upstream release.
+  * d/control: Bump Standards-Version with no other changes needed.
+
+ -- Barry Warsaw <barry@debian.org>  Tue, 25 Oct 2016 18:25:23 -0400
+
+zope.testing (4.5.0-3) unstable; urgency=medium
+
+  * debian/rules:
+    - Revert the previous change regarding egg-info removal.  (Closes: #802157)
+    - Remove the unnecessary override of dh_auto_install.
+    - Don't call dh_installchangelogs twice.
+
+ -- Barry Warsaw <barry@debian.org>  Wed, 04 Nov 2015 09:41:27 -0500
+
+zope.testing (4.5.0-2) unstable; urgency=medium
+
+  * d/rules: Be sure to remove any leftover python3.X/dist-packages.
+
+ -- Barry Warsaw <barry@debian.org>  Sat, 10 Oct 2015 18:45:58 -0400
+
+zope.testing (4.5.0-1) unstable; urgency=medium
+
+  * New upstream release.
+  * d/copyright: Remove Files-Excluded header after upstream fixed their
+    tarball to not include __pycache__ artifacts.
+
+ -- Barry Warsaw <barry@debian.org>  Tue, 22 Sep 2015 11:19:55 -0400
+
+zope.testing (4.4.1-1) unstable; urgency=medium
+
+  * New upstream release.
+  * d/patches/lp1467644.patch: Removed; applied upstream.
+  * d/copyright: Added a Files-Excluded header to remove __pycache__
+    directories containing .pyc files that aren't already automatically
+    purged.  See LP: #1484964 for details.
+
+ -- Barry Warsaw <barry@debian.org>  Fri, 14 Aug 2015 10:31:42 -0400
+
+zope.testing (4.2.0-2) unstable; urgency=medium
+
+  * d/patches/lp1467644.patch: Added for Python 3.5 compatibility.
+
+ -- Barry Warsaw <barry@debian.org>  Mon, 22 Jun 2015 20:23:54 -0400
+
+zope.testing (4.2.0-1) unstable; urgency=medium
+
+  * New upstream release.
+  * d/control: Bump Standards-Version with no other changes necessary.
+  * d/watch: Use pypi.debian.net redirector
+
+ -- Barry Warsaw <barry@debian.org>  Tue, 09 Jun 2015 17:44:51 -0400
+
+zope.testing (4.1.3-2) unstable; urgency=medium
+
+  * d/tests/control: Update DEP-8 test dependencies.
+
+ -- Barry Warsaw <barry@debian.org>  Mon, 30 Jun 2014 18:07:41 -0400
+
+zope.testing (4.1.3-1) unstable; urgency=low
+
+  * Team upload.
+
+  [ Gediminas Paulauskas ]
+  * New upstream release
+    - Removes the deprecated zope.testing.doctest. (Closes: #555436)
+    - Adds Python 3 support.
+  * Add python3-zope.testing package.
+  * debian/rules: install upstream changelog.
+  * debian/docs: README.rst was renamed.
+  * debian/control:
+    - enable autopkgtest (Closes: #692694).
+    - use canonical URI for Vcs-Svn and Vcs-Browser.
+    - bump Standards-Version to 3.9.4
+  * Drop the use of python-van.pydeb
+
+  [ Arnaud Fontaine ]
+  * debian/source/options: ignore .egg-info directory.
+
+  [ Barry Warsaw ]
+  * Bumped version to 4.1.3.
+  * d/compat: Bumped to version 9.
+  * d/control:
+    - Added myself to Uploaders.
+    - Updated Build-Depends.
+    - Tweaked long descriptions.
+    - Bumped Standards-Version to 3.9.5 with no other changes necessary.
+  * d/rules:
+    - Converted to --buildsystem=pybuild and simplify.
+    - Fix override_dh_installchangelogs rule.
+  * d/tests/all{,-3}: Updated.
+  * d/python-zope.testing.install: Removed; unneccesary.
+  * d/test_helper: Removed; unnecessary.
+
+ -- Barry Warsaw <barry@debian.org>  Sun, 22 Jun 2014 17:35:27 -0400
+
+zope.testing (3.10.2-1) unstable; urgency=low
+
+  * Team upload.
+
+  [ Arnaud Fontaine ]
+  * Switch to 3.0 (quilt) source format.
+  * debian/docs:
+    + Add README.txt.
+  * debian/control:
+    + Rename deprecated XS-Python-Version to X-Python-Version.
+    + Add Vcs-Browser and Homepage fields.
+    + Rename XS-Vcs-Svn to Vcs-Svn (dpkg supports it).
+    + Bump Standards-Version to 3.9.2. No changes needed.
+  * debian/copyright:
+    + Update to the last revision of DEP5 format.
+
+  [ Brian Sutherland ]
+  * New upstream version.
+  * Upload fixes dependency on python2.5 (Closes: #623922).
+  * Use dh_python2 instead of python-central (Closes: #617180).
+  * Add python-all to debian/tests/control as we test against all python
+    versions.
+  * Specifically depend on python-zope.testrunner, even though upstream
+    doesn't, to provide backwards compatibility.
+
+ -- Arnaud Fontaine <arnau@debian.org>  Wed, 18 May 2011 20:04:55 +0900
+
+zope.testing (3.9.4-0ubuntu2) natty; urgency=low
+
+  * debian/rules: do not mess with scripts, install only
+    /usr/bin/zope-testrunner using default python (LP: #761680).
+  * debian/test_helper: adapt to changed name of zope-testrunner, execute it
+    with different python interpreters instead.
+  * debian/tests/all: use our own test_helper.
+
+ -- Gediminas Paulauskas <menesis@pov.lt>  Fri, 15 Apr 2011 21:26:53 +0300
+
+zope.testing (3.9.4-0ubuntu1) maverick; urgency=low
+
+  * New upstream release.
+  * debian/rules: Build-Depends on python-all, not its -dev variant.
+  * debian/copyright: update, convert to dep5 format.
+
+ -- Gediminas Paulauskas <menesis@pov.lt>  Tue, 14 Sep 2010 15:27:42 +0300
+
+zope.testing (3.8.3-4) unstable; urgency=low
+
+  * Fix test path on python2.6.
+
+ -- Fabio Tranchitella <kobold@debian.org>  Wed, 27 Jan 2010 21:32:19 +0100
+
+zope.testing (3.8.3-3) unstable; urgency=low
+
+  * Convert to debhelper 7 and the pydeb dh7 extension.
+
+ -- Fabio Tranchitella <kobold@debian.org>  Fri, 25 Dec 2009 20:09:13 +0100
+
+zope.testing (3.8.3-2) unstable; urgency=low
+
+  * debian/control: build-depend on python-van.pydeb >= 1.3.0-2.
+    (Closes: #552923)
+
+ -- Fabio Tranchitella <kobold@debian.org>  Sun, 08 Nov 2009 11:12:13 +0100
+
+zope.testing (3.8.3-1) unstable; urgency=low
+
+  * New upstream release.
+
+ -- Fabio Tranchitella <kobold@debian.org>  Sun, 27 Sep 2009 07:31:57 +0200
+
+zope.testing (3.8.2-1) unstable; urgency=low
+
+  [ Matthias Klose ]
+  * New upstream version.
+
+  [ Brian Sutherland ]
+  * Set priority to optional as we are depended on by python-zodb which is
+    priority optional.
+
+ -- Matthias Klose <doko@ubuntu.com>  Mon, 21 Sep 2009 23:58:02 +0200
+
+zope.testing (3.8.1-3) unstable; urgency=low
+
+  * Add a conflict with python-zodb (<< 2.9). LP: #422428.
+
+ -- Matthias Klose <doko@ubuntu.com>  Sat, 12 Sep 2009 22:00:01 +0200
+
+zope.testing (3.8.1-2) unstable; urgency=low
+
+  * Set section to zope.
+  * Rebuild against van.pydeb 1.3.
+
+ -- Matthias Klose <doko@ubuntu.com>  Sat, 12 Sep 2009 21:00:47 +0200
+
+zope.testing (3.8.1-1) unstable; urgency=low
+
+  * New upstream release.
+  * Standards-Version: 3.8.3, no changes required.
+  * debian/rules: fixed FTBFS with Python 2.6. (Closes: #543230)
+  * debian/control: added conflict with zope3.
+
+ -- Fabio Tranchitella <kobold@debian.org>  Fri, 28 Aug 2009 10:47:34 +0200
+
+zope.testing (3.7.4-4) unstable; urgency=low
+
+  * Port revision 101026 from upstream: add a zope-testrunner binary.
+    http://mail.zope.org/pipermail/checkins/2009-June/035183.html
+  * Add a test_helper shell snippet that can be included in testing files
+    to ease writing autopkgtest scripts.
+    See /usr/share/python-zope.testing/test_helper
+
+ -- Brian Sutherland <brian@vanguardistas.net>  Mon, 15 Jun 2009 05:56:09 +0200
+
+zope.testing (3.7.4-3) unstable; urgency=low
+
+  * Fix test script again: one of the subtleties of grep is that it's exit
+    status is 1 if no match is found.
+
+ -- Brian Sutherland <brian@vanguardistas.net>  Wed, 03 Jun 2009 06:42:40 +0200
+
+zope.testing (3.7.4-2) unstable; urgency=low
+
+  * Ignore spurious and not so spurious messages printed in stderr of
+    test script
+
+ -- Brian Sutherland <brian@vanguardistas.net>  Tue, 02 Jun 2009 23:00:16 +0200
+
+zope.testing (3.7.4-1) unstable; urgency=low
+
+  * Change source package name.
+  * Standards version 3.8.0.
+  * Add watch file.
+  * Support all python versions.
+  * Convert to use python-van.pydeb for dependency generation
+  * Expand Description
+  * Add copyright
+
+ -- Brian Sutherland <brian@vanguardistas.net>  Mon, 25 May 2009 20:20:46 +0200
+
+python-zope.testing (3.7.0-1.1) lenny; urgency=low
+
+  * Non-maintainer upload.
+  * Rebuild for lenny
+
+ -- Brian Sutherland <brian@vanguardistas.net>  Fri, 08 May 2009 11:22:25 +0000
+
+python-zope.testing (3.7.0-1) etch-devel; urgency=low
+
+  * New upstream release
+
+ -- Archive Processor <archive@load.nidelven-it.no>  Mon,  6 Oct 2008 10:41:58 +0000
+
+python-zope.testing (3.5.1-1ubuntu2.1) etch-devel; urgency=low
+
+  * Non-maintainer upload.
+  * Rebuild for etch-devel
+
+ -- Brian Sutherland <brian@vanguardistas.net>  Wed, 23 Jul 2008 09:51:10 +0200
+
+python-zope.testing (3.5.1-1ubuntu2) hardy; urgency=low
+
+  * Re-build for hardy
+
+ -- Ignas Mikalajunas <ignas.mikalajunas@gmail.com>  Wed, 23 Apr 2008 11:19:35 +0300
+
+python-zope.testing (3.5.1-1ubuntu1) gutsy; urgency=low
+
+  * Rebuild the package with proper dependencies
+
+ -- Ignas Mikalajunas <ignas.mikalajunas@gmail.com>  Thu, 17 Apr 2008 15:26:03 +0300
+
+python-zope.testing (3.5.1-1) gutsy; urgency=low
+
+  * Inital Release
+
+ -- Brian Sutherland <brian@vanguardistas.net>  Thu,  8 Nov 2007 19:27:48 +0100

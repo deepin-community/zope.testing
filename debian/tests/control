@@ -1,0 +1,2 @@
+Tests: all-3
+Depends: @, python3-all, python3-zope.testrunner, python3-setuptools

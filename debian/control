@@ -1,0 +1,20 @@
+Source: zope.testing
+Section: zope
+Priority: optional
+Maintainer: Debian QA Group <packages@qa.debian.org>
+Build-Depends: debhelper (>= 11),
+               dh-python,
+               python3-all,
+               python3-setuptools,
+Standards-Version: 4.5.1
+Homepage: http://pypi.python.org/pypi/zope.testing
+
+Package: python3-zope.testing
+Architecture: all
+Depends: ${misc:Depends}, ${python3:Depends}
+Provides: ${python3:Provides}
+Description: Zope testing helpers for Python 3
+ This package provides a number of testing frameworks. It includes a flexible
+ test runner, and supports both doctest and unittest.
+ .
+ This is the Python 3 version.
