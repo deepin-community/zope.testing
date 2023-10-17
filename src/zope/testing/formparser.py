@@ -3,30 +3,36 @@
 This is intended to support functional tests that need to extract
 information from HTML forms returned by the publisher.
 
-See *formparser.txt* for documentation.
+See :doc:`../formparser` for documentation.
 
 This isn't intended to simulate a browser session; that's provided by
 the `zope.testbrowser` package.
 
+.. versionchanged:: 4.10.0
+   Add support for Python 3.
+
 """
 __docformat__ = "reStructuredText"
 
-import HTMLParser
-import urlparse
+
+import html.parser as HTMLParser
+import urllib.parse as urlparse
 
 
 def parse(data, base=None):
-    """Return a form collection parsed from `data`.
+    """Return a form collection parsed from *data*.
 
-    `base` should be the URL from which `data` was retrieved.
+    *base* should be the URL from which *data* was retrieved.
 
     """
     parser = FormParser(data, base)
     return parser.parse()
 
 
-class FormParser(object):
-
+class FormParser:
+    """
+    The parser.
+    """
     def __init__(self, data, base=None):
         self.data = data
         self.base = base
@@ -181,7 +187,7 @@ class Form(dict):
     # `zope.testbrowser` package.
 
     def __init__(self, name, id, method, action, enctype):
-        super(Form, self).__init__()
+        super().__init__()
         self.name = name
         self.id = id
         self.method = method
@@ -189,7 +195,7 @@ class Form(dict):
         self.enctype = enctype
 
 
-class Input(object):
+class Input:
     """Input element."""
 
     rows = None
@@ -197,7 +203,7 @@ class Input(object):
 
     def __init__(self, name, id, type, value, checked, disabled, readonly,
                  src, size, maxlength):
-        super(Input, self).__init__()
+        super().__init__()
         self.name = name
         self.id = id
         self.type = type
@@ -214,19 +220,19 @@ class Select(Input):
     """Select element."""
 
     def __init__(self, name, id, disabled, multiple, size):
-        super(Select, self).__init__(name, id, "select", None, None,
-                                     disabled, None, None, size, None)
+        super().__init__(name, id, "select", None, None,
+                         disabled, None, None, size, None)
         self.options = []
         self.multiple = multiple
         if multiple:
             self.value = []
 
 
-class Option(object):
+class Option:
     """Individual value representation for a select element."""
 
     def __init__(self, id, value, selected, label, disabled):
-        super(Option, self).__init__()
+        super().__init__()
         self.id = id
         self.value = value
         self.selected = selected

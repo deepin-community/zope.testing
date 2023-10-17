@@ -1,2 +1,6 @@
 Tests: all-3
-Depends: @, python3-all, python3-zope.testrunner, python3-setuptools
+Depends: python3-all,
+         python3-setuptools,
+         python3-zope.testrunner,
+         python3-zope.testing
+Restrictions: allow-stderr

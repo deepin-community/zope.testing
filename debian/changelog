@@ -1,3 +1,42 @@
+zope.testing (5.0.1-1) unstable; urgency=medium
+
+  * New upstream release.
+
+ -- Colin Watson <cjwatson@debian.org>  Mon, 02 Jan 2023 17:44:43 +0000
+
+zope.testing (4.10-2) unstable; urgency=medium
+
+  * Switch Maintainer to the Debian Python Team (closes: #948816).
+  * Policy version 4.6.2.
+  * Cherry-pick upstream patch to fix tests on Python 3.11.
+  * Run tests using zope.testrunner.
+
+ -- Colin Watson <cjwatson@debian.org>  Wed, 21 Dec 2022 11:42:05 +0000
+
+zope.testing (4.10-1) unstable; urgency=medium
+
+  * QA upload.
+  * New upstream release.
+  * Change to debhelper-compat.
+  * Bump debhelper to 13.
+  * Update homepage, point to GitHub.
+  * Declare Rules-requires-Root: no
+  * d/copyright:
+    - Update copyrighted year for upstream.
+    - Update URLs.
+  * d/watch:
+    - Use secure URL.
+    - Bump version to 4.
+  * Update Standards-Version to 4.6.0
+  * autopkgtest:
+    - Add restriction, allow-stderr
+    - Change '@' for python3-testing.
+    - Test all supported Python versions.
+  * Add d/upstream/metadata: Bug-Database, Bug-Submit,
+    Repository and Repository-Browse.
+
+ -- Håvard F. Aasen <havard.f.aasen@pfft.no>  Fri, 08 Apr 2022 20:19:08 +0200
+
 zope.testing (4.9-1) unstable; urgency=medium
 
   * QA upload.

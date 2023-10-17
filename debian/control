@@ -1,13 +1,18 @@
 Source: zope.testing
 Section: zope
 Priority: optional
-Maintainer: Debian QA Group <packages@qa.debian.org>
-Build-Depends: debhelper (>= 11),
+Maintainer: Debian Python Team <team+python@tracker.debian.org>
+Uploaders: Colin Watson <cjwatson@debian.org>
+Build-Depends: debhelper-compat (= 13),
                dh-python,
                python3-all,
                python3-setuptools,
-Standards-Version: 4.5.1
-Homepage: http://pypi.python.org/pypi/zope.testing
+               python3-zope.testrunner,
+Standards-Version: 4.6.2
+Rules-Requires-Root: no
+Homepage: https://github.com/zopefoundation/zope.testing
+Vcs-Browser: https://salsa.debian.org/python-team/packages/zope.testing
+Vcs-Git: https://salsa.debian.org/python-team/packages/zope.testing.git
 
 Package: python3-zope.testing
 Architecture: all
