@@ -19,6 +19,7 @@
 """Setup for zope.testing package
 """
 import os
+
 from setuptools import setup
 
 
@@ -27,29 +28,12 @@ def read(*rnames):
         return f.read()
 
 
-chapters = [
-    read((os.path.join('src', 'zope', 'testing', name)))
-    for name in [
-        'formparser.txt',
-        'loggingsupport.txt',
-        'renormalizing.txt',
-        'setupstack.txt',
-        'wait.txt',
-        'doctestcase.txt',
-    ]
-]
-
-
-long_description = '\n\n'.join(
-    [read('README.rst')] +
-    chapters +
-    [read('CHANGES.rst')]
-)
+long_description = read('README.rst') + '\n\n' + read('CHANGES.rst')
 keywords = "zope testing doctest RENormalizing OutputChecker timeout logging"
 
 setup(
     name='zope.testing',
-    version='4.9',
+    version='5.0.1',
     url='https://github.com/zopefoundation/zope.testing',
     license='ZPL 2.1',
     description='Zope testing helpers',
@@ -62,17 +46,17 @@ setup(
         "License :: OSI Approved :: Zope Public License",
         "Operating System :: OS Independent",
         "Programming Language :: Python",
-        "Programming Language :: Python :: 2",
-        "Programming Language :: Python :: 2.7",
         "Programming Language :: Python :: 3",
-        "Programming Language :: Python :: 3.5",
-        "Programming Language :: Python :: 3.6",
         "Programming Language :: Python :: 3.7",
         "Programming Language :: Python :: 3.8",
         "Programming Language :: Python :: 3.9",
+        "Programming Language :: Python :: 3.10",
+        "Programming Language :: Python :: 3.11",
         "Programming Language :: Python :: Implementation :: CPython",
         "Programming Language :: Python :: Implementation :: PyPy",
         "Framework :: Zope :: 3",
+        "Framework :: Zope :: 4",
+        "Framework :: Zope :: 5",
         "Topic :: Software Development :: Libraries :: Python Modules",
         "Topic :: Software Development :: Testing",
     ],
@@ -89,6 +73,12 @@ setup(
     extras_require={
         'test': [
             'zope.testrunner',
+        ],
+        'docs': [
+            'sphinx',
+            'repoze.sphinx.autointerface',
+            'zope.exceptions',
+            'zope.interface',
         ],
     },
     include_package_data=True,
