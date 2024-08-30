@@ -6,8 +6,8 @@
     :target: https://pypi.python.org/pypi/zope.testing/
     :alt: Latest Version
 
-.. image:: https://travis-ci.com/zopefoundation/zope.testing.svg?branch=master
-        :target: https://travis-ci.com/zopefoundation/zope.testing
+.. image:: https://github.com/zopefoundation/zope.testing/actions/workflows/tests.yml/badge.svg
+        :target: https://github.com/zopefoundation/zope.testing/actions/workflows/tests.yml
 
 .. image:: https://readthedocs.org/projects/zopetesting/badge/?version=latest
         :target: http://zopetesting.readthedocs.org/en/latest/
@@ -15,19 +15,21 @@
 
 This package provides a number of testing frameworks.
 
+For complete documentation, see https://zopetesting.readthedocs.io
+
 cleanup
   Provides a mixin class for cleaning up after tests that
   make global changes.
 
+  See `zope.testing.cleanup`
+
 formparser
   An HTML parser that extracts form information.
-
-  **Python 2 only**
 
   This is intended to support functional tests that need to extract
   information from HTML forms returned by the publisher.
 
-  See formparser.txt.
+  See `zope.testing.formparser`
 
 loggingsupport
   Support for testing logging code
@@ -35,17 +37,23 @@ loggingsupport
   If you want to test that your code generates proper log output, you
   can create and install a handler that collects output.
 
+  See `zope.testing.loggingsupport`
+
 loghandler
   Logging handler for tests that check logging output.
+
+  See `zope.testing.loghandler`
 
 module
   Lets a doctest pretend to be a Python module.
 
-  See module.txt.
+  See `zope.testing.module`
 
 renormalizing
   Regular expression pattern normalizing output checker.
   Useful for doctests.
+
+  See `zope.testing.renormalizing`
 
 server
   Provides a simple HTTP server compatible with the zope.app.testing
@@ -54,25 +62,27 @@ server
 
   **Python 2 only**
 
+  See `zope.testing.server`
+
 setupstack
   A simple framework for automating doctest set-up and tear-down.
-  See setupstack.txt.
+
+  See `zope.testing.setupstack`
 
 wait
   A small utility for dealing with timing non-determinism
-  See wait.txt.
+
+  See `zope.testing.wait`
 
 doctestcase
-  Support for defining doctests as methods of ``unittest.TestCase``
+  Support for defining doctests as methods of `unittest.TestCase`
   classes so that they can be more easily found by test runners, like
   nose, that ignore test suites.
 
-.. contents::
+  See `zope.testing.doctestcase`
 
 Getting started developing zope.testing
 =======================================
 
-zope.testing uses buildout.  To start, run ``python bootstrap.py``.  It will
-create a number of directories and the ``bin/buildout`` script.  Next, run
-``bin/buildout``.  It will create a test script for you.  Now, run ``bin/test``
-to run the zope.testing test suite.
+``zope.testing`` uses ``tox``.  To start, install ``tox`` using ``pip install tox``.
+Now, run ``tox`` to run the ``zope.testing`` test suite.
