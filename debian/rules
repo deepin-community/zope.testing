@@ -1,12 +1,18 @@
 #!/usr/bin/make -f
 
 export PYBUILD_NAME=zope.testing
+export PYBUILD_TEST_CUSTOM=1
+export PYBUILD_TEST_ARGS=cd {build_dir}; {interpreter} -m zope.testrunner --test-path . -vv
 #export PYBUILD_VERBOSE=1
 #export DH_VERBOSE=1
 
 %:
 	dh $@ --with python3 --buildsystem=pybuild
 
+# Work around
+# https://salsa.debian.org/python-team/tools/dh-python/-/merge_requests/40.
+override_dh_auto_test:
+	dh_auto_test -- --system=custom
 
 override_dh_installchangelogs:
 	dh_installchangelogs CHANGES.rst

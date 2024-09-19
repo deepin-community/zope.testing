@@ -1,10 +1,10 @@
-Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
 Upstream-Name: zope.testing
 Upstream-Contact: Zope Foundation and Contributors <zope-dev@zope.org>
-Source: http://pypi.python.org/pypi/zope.testing
+Source: https://pypi.org/project/zope.testing
 
 Files: *
-Copyright: (c) 2001-2008 Zope Foundation and Contributors.
+Copyright: (c) 2001-2021 Zope Foundation and Contributors.
 License: Zope-2.1
  Zope Public License (ZPL) Version 2.1
  .
